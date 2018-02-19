@@ -1,0 +1,71 @@
+<DOCTYPE html>
+	<html >
+	<head>
+		
+		<title>BANK</title>
+		<script> 
+
+			var amount =0;
+			function myfunction1(){
+				document.getElementById("funt1").style.display="block";
+				document.getElementById("funt2").style.display="none";
+				document.getElementById("cash").style.display="none";
+				
+			} 
+			function myfunction2(){
+				document.getElementById("funt1").style.display="none";
+				document.getElementById("funt2").style.display="block";
+				document.getElementById("cash").style.display="none";
+				
+			}
+			function myfunction3(){
+				document.getElementById("funt1").style.display="none";
+				document.getElementById("funt2").style.display="none";
+				document.getElementById("cash").style.display="block";
+				document.getElementById("cash").innerHTML ="the amount in your account" +amount;
+			}
+			function myfunction(){
+				document.getElementById("cash").style.display="block";
+				var damount=parseInt(document.getElementById("number").value);
+				amount = amount + damount;
+				document.getElementById("cash").innerHTML ="amount=" +amount;
+			}
+			function myfunction02(){
+				console.log(amount);
+			document.getElementById("cash").style.display="block";
+			var wamount=parseInt(document.getElementById("number02").value);
+				if (wamount > amount){
+					document.getElementById("cash").innerHTML="insufficient balance";
+				}
+				else{
+					amount = amount - wamount;
+					document.getElementById("cash").innerHTML="amount=" +amount;
+				}
+			}
+	</script> 
+</head> 
+​
+<body> 
+
+	​ 
+	<input type="button" onclick="myfunction1()" value="DEPOSIT"> 
+	<input type="button" onclick="myfunction2()" value="WITHDRAW"> 
+	<input type="button" onclick="myfunction3()" value="SHOWBALANCE"> 
+
+	<div id="funt1" style="display:none";>
+		<input type="number" id="number"></br>
+		<input type="button" value="done" onclick="myfunction()">
+		
+	</div>
+	<div id="funt2" style="display:none";>
+		<input type="text" id="number02"></br>
+		<input type="button" value="OK" onclick="myfunction02()">
+		
+	</div>
+
+	<p id= "cash" style="display:none";> the cash in account is</p>
+	​
+
+	​
+</body> 
+</html> 
