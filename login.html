@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>form valid</title>
+	<script>
+		
+		function validate(){
+
+			var x=document.forms["myform"]["username"];
+			if (x.value=="")
+			{
+				alert("Please enter the username.");
+				x.focus();
+				return false;
+			}
+			var y=document.forms["myform"]["password"];
+			if (y.value=="")
+			{
+				alert("Please enter the password.");
+				y.focus();
+				return false;
+			}
+			var a=document.forms["myform"]["emailid"];
+			if (a.value=="")
+			{
+				alert("Please enter the emailid .");
+				a.focus();
+				return false;
+			}
+			var b=document.forms["myform"]["contactno"];
+			if (b.value=="")
+			{
+				alert("Please enter the contactno.");
+				b.focus();
+				return false;
+			}
+
+
+			alert ("Login successfully");
+
+
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+
+		<h2> Login Form Validation</h2>
+		<form id="form_id" method="post" name="myform">
+			<label>User Name :</label>
+			<input type="text" name="username" id="username"/></br>
+			<label>Password :</label>
+			<input type="password" name="password" id="password"/></br>
+			<label>Sex:</label>
+			<input type="radio" name="msex" value="Male" /><span>Male</span>
+			<input type="radio" name="fsex" value="Female" /><span>Female</span></br>
+			<label>EmailId :</label>
+			<input type="emailid" name="emailid" id="emailid"/></br>
+			<label>Contactno :</label>
+			<input type="contactno" name="contactno" id="contactno"/></br>
+			<input type="button" value="Login" id="submit" onclick="validate()"/>
+		</form>
+
+	</div>
+</body>
+</html>
